@@ -12,6 +12,9 @@ class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode dummy=new ListNode(0);
         dummy.next=head;
+              
+            
+        
         ListNode prev=dummy;
         ListNode curr=head;
         while(curr!=null){
@@ -29,3 +32,26 @@ class Solution {
         return dummy.next;
     }
 }
+/*/* to make the traversal easier
+        that is it can be make a duplicate copy*/
+        /* 1->1->2->3
+        prev=0
+        curr=1
+        while(curr!=null){
+            if(1==1){
+                while(1==1)
+                cur=cur.next;
+                while(1==1) cur=cur.next
+                while(1!=2) {}
+                prev.next=curr.next
+                1->2
+                prev=2
+                curr=2
+          while(curr!=null){
+            if(2!=3)
+            prev.next=3
+            2->3
+            prev=3
+            curr=3
+
+            Ans:2->3*/
