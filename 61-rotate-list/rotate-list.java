@@ -34,17 +34,22 @@ class Solution {
         int size=1;
         while(tail.next!=null){
             size++;
-            tail=tail.next;
+            tail=tail.next;// it reaches last value 
         }
-        tail.next=head;
-        k=k%size;
-        int sizeNewtail = size-k;
-        ListNode newTail=head;
-        for(int i=1; i<sizeNewtail ;i++){
+        //1->2->3->4  k=2  tail =4
+        tail.next=head;// 3->1(head)
+        k=k%size;//2%4 =2
+        int sizeNewtail = size-k;//4-2=2
+        ListNode newTail=head;//1(newTail)
+        for(int i=1; i<sizeNewtail ;i++){/*
+        1<2 true 
+        newTail=2
+        1->2  and 3->4*/
             newTail=newTail.next;
         }
-        ListNode newHead=newTail.next;
-        newTail.next=null;
-        return newHead;
+        ListNode newHead=newTail.next;//newHead=3
+        newTail.next=null;//2->null
+        //1->2  and 3->4
+        return newHead;//3->4->1->2->null
     }
 }
