@@ -11,7 +11,7 @@
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
         if(head==null || k==0) return head;
-        Stack<ListNode> stack = new Stack<>();
+        /*Stack<ListNode> stack = new Stack<>();
         ListNode temp=head;
         int size=1;
         while(temp.next!=null){
@@ -28,6 +28,23 @@ class Solution {
             curr.next=null;
             count++;
         }
-        return head;
+        return head;*/
+        //another easy and efficent without an extra space
+        ListNode tail=head;
+        int size=1;
+        while(tail.next!=null){
+            size++;
+            tail=tail.next;
+        }
+        tail.next=head;
+        k=k%size;
+        int sizeNewtail = size-k;
+        ListNode newTail=head;
+        for(int i=1; i<sizeNewtail ;i++){
+            newTail=newTail.next;
+        }
+        ListNode newHead=newTail.next;
+        newTail.next=null;
+        return newHead;
     }
 }
