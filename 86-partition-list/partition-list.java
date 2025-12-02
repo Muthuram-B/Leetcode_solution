@@ -30,3 +30,7 @@ class Solution {
         return smallerNode.next;
     }
 }
+/*the core idea behind is there are tw0 separte linked list for each smaller and larger values 
+values that are smaller than x are in the smaller node
+greater or equal values are stored in the largerNode
+in the end the last index of the smaller node is connected to the largerNode and the largerNode last is made as the null to end the infinte loop amonf the linked list*/
