@@ -36,3 +36,7 @@ class MinStack {
  * int param_3 = obj.top();
  * int param_4 = obj.getMin();
  */
+
+
+ /* we use an extra stack to store the val for example consider a eg for 2,1,-3,5,0  are pushed into a stack by means of push operation first 2 is pushed and then 1 is pushed after it checks a condition that 1 is less than 2 and it is push into minstack also . in this way -3 is pushed in both stack and it compares with 1 and push into the minstack also . next the 5 is pushed but it is greater than the -3 so not push in minstack  
+ if we perform a gerMin() function we just peek the top value of the minstack and return it .*/ 
