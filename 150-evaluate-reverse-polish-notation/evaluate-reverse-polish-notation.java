@@ -29,3 +29,5 @@ class Solution {
             return false;
         }
     }
+/* it return the result in the form of expression in the postfix form that is it can be represented as 2,1,+,3,*
+in this intially 2 is pushed then 1 is pushed after that it sees + it is an operator so it pop out the value 2 and 1 and then add it 2+1=3  then add it to stack after that push 3 in to stack then * operator then pop 3 and 3 from stack and do 3*3=9 and push into stack and pop 9*/
