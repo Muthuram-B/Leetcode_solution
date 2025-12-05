@@ -4,10 +4,10 @@ class Solution {
         int maxProfit=0;
 
         for(int price:prices){
-            if(price<minPrice){
+            if(price<minPrice){/*it primarily check for the minimum element in the array that is the buy point */
                 minPrice=price;
 
-            }else if(price-minPrice>maxProfit){
+            }else if(price-minPrice>maxProfit){/*it checks only if the element is less greater than the minprice and find the maxprofit based on the price and minprice which gives the profit and it is checked with the maxprofit and if it is greater than the prev maxprofit the maxprofit will be updated*/  
                 maxProfit=price-minPrice;
 
             }
