@@ -20,8 +20,8 @@ class Solution {
 
         for(int i=s;i<c.length;i++){
 
-            // if(i>s && c[i]==c[i-1]) continue;
-            // if(c[i]>t) break; // if value is greate skip
+            
+             if(c[i]>t) break; // if value is greate skip
         
         curr.add(c[i]);//add it to the curr list
         backtrack(c,t-c[i],i,curr,result);
