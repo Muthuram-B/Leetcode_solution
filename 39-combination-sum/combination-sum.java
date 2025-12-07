@@ -16,7 +16,7 @@ class Solution {
         result.add(new ArrayList<>(curr));
         return;
        }
-       if(t<0) return;
+       ;
 
         for(int i=s;i<c.length;i++){
 
