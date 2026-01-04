@@ -17,8 +17,9 @@ class Solution {
             }
             if(emptyLeft) break;
         }
+        //no empty then suduko is solved
         if(!emptyLeft) return true;
-
+// repeatdly placing elements by checking it is safe or else backtrack by placing '.'
         for(char num='1';num<='9';num++){
             if(isSafe(board,r,c,num)){
                 board[r][c]=num;
@@ -29,14 +30,13 @@ class Solution {
         return false;
     }
 public static boolean isSafe(char[][] board,int r,int c,int num){
+    // it checks the elements in row nad col repeatdly
     for(int i=0;i<board.length;i++){
         if(board[r][i]==num) return false;
         if(board[i][c]==num) return false;
       
-
-    }
-   
-
+}
+// it checks in the inner 3*3 grid
     int sqrt=(int)Math.sqrt(board.length);
     int rowstart=r-(r%sqrt);
     int colstart=c-(c%sqrt);
