@@ -14,7 +14,7 @@ class Solution {
 
 
         if(x==0||x==1) return x;
-        int s=1; int e=x;
+        int s=0; int e=x;
 
         int ans=0;
 
