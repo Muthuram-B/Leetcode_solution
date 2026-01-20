@@ -19,7 +19,7 @@ class Solution {
         int ans=0;
 
         while(s<=e){
-            int m=s+(e-s)/2;
+            int m=(s+e)/2;
             if(m*m==x) return m;
             if(m<=x/m){
                 s=m+1;
