@@ -28,6 +28,9 @@ class Solution {
     int water=0; int i=0; int j=height.length-1;
     int lmax=0,rmax=0;
     while(i<j){
+        /*each and every time it caluculates the lmax and rmax and then check 
+        the height of both inorder to avoid water spill so if heigth[i] < j then 
+        we do i++ and then add the water unit if less then add at the end*/
         lmax=Math.max(lmax,height[i]);
         rmax=Math.max(rmax,height[j]);
         if(height[i]<=height[j]){
