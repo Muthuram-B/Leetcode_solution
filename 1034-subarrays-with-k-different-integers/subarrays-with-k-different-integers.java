@@ -1,6 +1,8 @@
 class Solution {
     public int subarraysWithKDistinct(int[] nums, int k) {
         return findKdiffInt(nums,k)-findKdiffInt(nums,k-1);
+        /* this exactly gives the number of element for k and if we do k-1 that
+        is less than k then we get the correct count*/
     }
     public int findKdiffInt(int[] nums,int k){
         int l=0; int count=0;
