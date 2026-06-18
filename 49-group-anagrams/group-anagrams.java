@@ -1,58 +1,72 @@
 import java.math.BigInteger;
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
+        if(strs==null || strs.length==0) return new ArrayList<>();
+
+
+         Map<String, List<String>> map = new HashMap<>();
         
-//         List<List<String>> list=new ArrayList<>();
-
-//         HashMap<String> map=new HashMap<>();
-// List<String> sublist=new ArrayList<>();
-  
-//      for(String str:strs){
-//         String sorted=str.sort().toLowerCase();
-//         map.put(sorted);
-//      }
-//      for(String str:strs){
-//         if()
-//      }
-    
-
-    if(strs==null || strs.length==0) return new ArrayList<>();
-
-    Map<String,List<String>> freqmap=new HashMap<>();
-
-    for(String str:strs){
-
-        String freqstr=getFreqStr(str);
-
-        if(freqmap.containsKey(freqstr)) freqmap.get(freqstr).add(str);
-
-        else{
-            List<String> s = new ArrayList<>();
-            s.add(str);
-            freqmap.put(freqstr,s);
+        for (String str : strs) {
+            // Array to count frequencies of characters 'a' through 'z'
+            int[] count = new int[26];
+            for (char c : str.toCharArray()) {
+                count[c - 'a']++;
+            }
+            
+            // Build a unique string key from the frequency array
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < 26; i++) {
+                sb.append('#'); // Delimiter to separate counts safely
+                sb.append(count[i]);
+            }
+            String key = sb.toString();
+            
+            // Group the original string by its frequency key
+            if (!map.containsKey(key)) {
+                map.put(key, new ArrayList<>());
+            }
+            map.get(key).add(str);
         }
-    }
-    return new ArrayList<>(freqmap.values());
-    }
-
-
-    private String getFreqStr(String str){
-
-        int[] freq=new int[26];
-
-        for(char c:str.toCharArray()) freq[c-'a']++;
-
-        StringBuilder freqstr=new StringBuilder("");
-        char c='a';
-        for(int i:freq){
-            freqstr.append(c);
-            freqstr.append(i);
-            c++;
-        }
-
-        return freqstr.toString();
+        
+        return new ArrayList<>(map.values());
     }
 }
+
+//     Map<String,List<String>> freqmap=new HashMap<>();
+
+//     for(String str:strs){
+
+//         String freqstr=getFreqStr(str);
+
+//         if(freqmap.containsKey(freqstr)) freqmap.get(freqstr).add(str);
+
+//         else{
+//             List<String> s = new ArrayList<>();
+//             s.add(str);
+//             freqmap.put(freqstr,s);
+//         }
+//     }
+//     return new ArrayList<>(freqmap.values());
+//     }
+
+
+//     private String getFreqStr(String str){
+
+//         int[] freq=new int[26];
+
+//         for(char c:str.toCharArray()) freq[c-'a']++;
+
+//         StringBuilder freqstr=new StringBuilder("");
+//         char c='a';
+//         for(int i:freq){
+//             freqstr.append(c);
+//             freqstr.append(i);
+//             c++;
+//         }
+
+//         return freqstr.toString();
+//     }
+// }
 
 
 
