@@ -37,3 +37,17 @@ finally return the maximum longestseq obtained
   return longestseq;
 }
 }
+
+/* eg nums;[1,0,6,-1]  // make 1-fale ; 0-false ; 6-false; -1-false
+
+1 conseq++ then check for nextnum=2  no nextnum
+
+check prevnum =0 found conseq++ (2)  then check nextprevnum =-1 found conseq++(3)
+
+check for -2 not present done with a seq and update longestseq=3
+
+then next ele 0 already true so go to next
+
+then 6 find the nextnum =7 not present find prevnum=5 not present conseq=1
+
+then -1 already true so the longestseq = 3 [-1,0,1] */ 
