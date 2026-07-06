@@ -7,10 +7,15 @@ class Solution {
                 diagsum+=mat[i][i];
                 //j++;
 
-                diagsum+=mat[i][j--];
-        }
-                if(n%2!=0) diagsum-= mat[n/2][n/2]; //remove centre ele 
+                // diagsum+=mat[i][j--];
         
+                // if(n%2!=0) diagsum-= mat[n/2][n/2]; //remove centre ele 
+        
+          if(i!=j) diagsum+=mat[i][j];
+
+          j--;
+        }
+              
     
     return diagsum;
     }
