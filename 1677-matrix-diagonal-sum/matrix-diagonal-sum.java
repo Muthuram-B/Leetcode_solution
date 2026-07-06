@@ -9,7 +9,7 @@ class Solution {
 
                 diagsum+=mat[i][j--];
         }
-                if(n%2!=0) diagsum-= mat[n/2][n/2];
+                if(n%2!=0) diagsum-= mat[n/2][n/2]; //remove centre ele 
         
     
     return diagsum;
